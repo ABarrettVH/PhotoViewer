@@ -1,16 +1,15 @@
 import React from "react";
 import './PhotoViewer.css'
 import { useState } from "react";
+import './ImageSelector.css'
 
 
-export function PhotoViewer(props) {
-    const [url, newUrl ] = useState(props.src);
 
-
+export function PhotoViewer(props: {srcUrl: string}) {
 
     return (
         <div>
-            <img  className="topImage" src={url} ></img>
+            <img  className="topImage" src={props.srcUrl} alt='dynamic top image'></img>
         </div>
     );
 }
