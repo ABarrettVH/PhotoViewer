@@ -1,17 +1,25 @@
 import React from "react";
 import './ImageSelector.css'
+import { PhotoViewer } from "./PhotoViewer";
 
 
 export function ImageSelector() {
     const imageUrls = getImageUrls();
 
+    const handleButtonClick = () => {
+    setImageUrl('path/to/image2.jpg'); // Update the state on button click
+  };
+
      return (
         <div className="imageSelector">
             {imageUrls.map((image) => (
+                <button onClick={handleButtonClick}>
                 <img 
                     className="galleryItem"
                     src={image}
+                    
                 />
+                </button>
             ))}
         </div>
 
@@ -19,9 +27,20 @@ export function ImageSelector() {
      );
 }
 
+function changeImage() {
+    //const imageUrls = getImageUrls();
+    return (
+        <div>
+            Image Selected</div> 
+    )
+}
+
 const brokenImages = [
     1, 24, 32, 36, 44, 47
 ];
+
+
+
 
 function getImageUrls() {
     const urls = [];

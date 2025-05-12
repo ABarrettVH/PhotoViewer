@@ -13,6 +13,7 @@ function App() {
           <h1>React Photo Viewer</h1>
           <PhotoViewer src={"https://picsum.photos/id/600/1600/900.jpg"}/>
           <ImageSelector/>
+
       </div>
   )
 }
