@@ -12,6 +12,7 @@ export function ImageSelector(props: {srcUrl: string, setNewUrl: (url: string) =
                     <img 
                         className="galleryItem"
                         src={image}
+                        alt="button"
                     />
                 </button>
             ))}
@@ -25,9 +26,7 @@ const brokenImages = [
 ];
 
 
-
-
-function getImageUrls() {
+export function getImageUrls() {
     const urls = [];
 
     for (let i = 0; i < 50; i++) {
