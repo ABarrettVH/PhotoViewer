@@ -4,7 +4,6 @@ import { fireEvent, render } from '@testing-library/react';
 import App from './App';
 import { PhotoViewer } from './PhotoViewer/PhotoViewer';
 import { getImageUrls, ImageSelector } from './PhotoViewer/ImageSelector';
-import renderer from 'react-test-renderer';
 
 test('renders the title- React Photo Viewer', () => {
   const { getByText } = render(<App />);
@@ -13,7 +12,7 @@ test('renders the title- React Photo Viewer', () => {
 });
 
 test('Renders an image given a url', () => {
-  const { getByAltText } = render(<PhotoViewer srcUrl='https://picsum.photos/id/600/1600/900.jpg' />);
+  const { getByAltText } = render(<App />);
   
   const imgElement = getByAltText(/dynamic top image/i);
   expect(imgElement).toBeVisible();
@@ -47,10 +46,9 @@ describe("App", () => {
 });
 
 
+describe("Image selector", () => {
 
-describe("My Component", () => {
-
-  it('renders correctly', async () => {
+  it('correctly displays the selected photo from the gallery to thetop image', async () => {
   const {getAllByAltText} = render(<App/>);
 
   const topImages = getAllByAltText('dynamic top image'); 
